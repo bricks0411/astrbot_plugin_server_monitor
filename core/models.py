@@ -21,5 +21,5 @@ class HostInfo:
     cpu_physical_cores: int             # CPU 物理核心
     cpu_logical_cores: int              # CPU 逻辑核心
 
-    total_memory: int
-    total_disk: int
+    total_memory_bytes: int | None
+    total_disk_bytes: int | None
