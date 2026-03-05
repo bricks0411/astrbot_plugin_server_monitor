@@ -54,8 +54,8 @@ class WindowsAdapter(BaseSystemAdapter):
             cpu_model          = cpu_model,
             cpu_physical_cores = cpu_physical_cores,
             cpu_logical_cores  = cpu_logical_cores,
-            total_memory       = total_memory,
-            total_disk         = total_disk
+            total_memory_bytes = total_memory,
+            total_disk_bytes   = total_disk
         )
 
     def _get_total_disk_size(self):
