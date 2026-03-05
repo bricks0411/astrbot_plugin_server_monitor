@@ -119,15 +119,19 @@ def draw_server_stat_card(metrics, host_info, save_path):
     ax.plot([0.02, 0.98], [0.87, 0.87], color="#555", linewidth=1)
 
     # ===== 主机信息 =====
+    total_mem_gb = host_info.total_memory_bytes / (1024 ** 3) if host_info.total_memory_bytes else None
+    total_disk_gb = host_info.total_disk_bytes / (1024 ** 3) if host_info.total_disk_bytes else None
     host_text = (
         f"Host : {host_info.hostname}\n"
         f"OS   : {host_info.os_name} {host_info.os_version}\n"
-        f"Arch : {host_info.architecture}"
+        f"Arch : {host_info.architecture}\n"
+        f"Mem  : {total_mem_gb:.2f} GB\n"
+        f"Disk : {total_disk_gb:.2f} GB\n"
     )
 
     ax.text(
         0.03,
-        0.70,
+        0.59,
         host_text,
         fontsize=11,
         family="monospace",
@@ -135,7 +139,7 @@ def draw_server_stat_card(metrics, host_info, save_path):
         fontproperties=font_prop
     )
 
-    ax.plot([0.02, 0.98], [0.66, 0.66], color="#555", linewidth=1)
+    ax.plot([0.02, 0.98], [0.60, 0.60], color="#555", linewidth=1)
 
     # ===== 指标 =====
     labels = ["CPU", "MEM", "DISK"]
