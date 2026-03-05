@@ -39,7 +39,7 @@
 
 入口模块调用核心层服务，核心层依赖适配层完成跨系统数据采集，同时调用工具层做可视化、数据库层做数据存储，各层间仅依赖抽象接口，无强耦合。
 
-<img src="C:\Users\联想\AppData\Roaming\Typora\typora-user-images\image-20260305180058038.png" alt="image-20260305180058038" style="zoom: 33%;" />
+<img width="2794" height="1759" alt="image-20260305180058038" src="https://github.com/user-attachments/assets/abcdc992-a0a3-429c-843a-8377b6eaaf50" />
 
 ## 项目结构
 
@@ -114,7 +114,7 @@ astrbot_plugin_server_monitor/
 
 示例如下：
 
-![image-20260305173435608](C:\Users\联想\AppData\Roaming\Typora\typora-user-images\image-20260305173435608.png)
+<img width="875" height="401" alt="image-20260305173435608" src="https://github.com/user-attachments/assets/e92c2d38-8e8a-4aec-b695-52a2b02fdc68" />
 
 ### 3. 历史趋势图
 
@@ -139,7 +139,7 @@ astrbot_plugin_server_monitor/
 
 示例如下：
 
-![image-20260305173724555](C:\Users\联想\AppData\Roaming\Typora\typora-user-images\image-20260305173724555.png)
+<img width="876" height="315" alt="image-20260305173724555" src="https://github.com/user-attachments/assets/5147bc3b-766e-497b-b069-d82e6114e7ab" />
 
 ## 运行环境
 
