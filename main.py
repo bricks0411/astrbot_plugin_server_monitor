@@ -6,7 +6,7 @@ import asyncio
 from .adapters.linux import LinuxAdapter
 from .adapters.windows import WindowsAdapter
 from .core.monitor import ServerMonitorService
-from .database.db import MetricsDatabase
+from .storage.db import MetricsDatabase
 from .utils.chart import draw_server_chart, draw_server_stat_card
 
 from astrbot.api.event import filter, AstrMessageEvent, MessageEventResult

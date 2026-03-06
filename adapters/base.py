@@ -1,6 +1,6 @@
 # adapters/base.py
 
-from abc import ABC, abstractclassmethod, abstractmethod
+from abc import ABC, abstractmethod
 from ..core.models import SystemMetrics, HostInfo
 
 class BaseSystemAdapter(ABC):
