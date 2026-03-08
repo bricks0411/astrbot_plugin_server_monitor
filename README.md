@@ -21,11 +21,13 @@
 
 ## 提醒
 
-需要提前安装 `matplotlib` 库，否则插件将无法正常运行
+🚨 需要提前安装 `matplotlib` 库，否则插件将无法正常运行
 
   ```
   pip install matplotlib
   ```
+
+🚨 在 `docker` 环境下获取的内核数据可能不准确，请酌情对待
 
 ## 项目架构
 
