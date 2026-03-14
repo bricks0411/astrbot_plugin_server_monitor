@@ -7,6 +7,8 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import List, Tuple
 
+from flask import Config
+
 from ..core.models import SystemMetrics
 
 
@@ -40,7 +42,7 @@ class MetricsDatabase:
         await self.db.commit()
 
     # 插入数据
-    async def insert(self, metrics: SystemMetrics):
+    async def insert(self, metrics: SystemMetrics, CPU_limit: int, MEM_limit: int):
         timestamp = int(time.time())
 
         load_1m = metrics.load_1m if metrics.load_1m is not None else -1
@@ -79,7 +81,7 @@ class MetricsDatabase:
 
     # 删除旧数据
     async def delete_expired(self, data_del_gap: int):
-        timestamp = time.time()
+        timestamp = int(time.time())
         cutoff = timestamp - data_del_gap
 
         async with self.db_lock:

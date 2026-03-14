@@ -1,0 +1,68 @@
+{
+  "alert_setting": {
+    "description": "配置异常指标告警的各项功能",
+    "type": "object",
+    "items": {
+      "adminID": {
+        "description": "宿主机发生异常时，将告警信息推送到指定会话",
+        "type": "list"
+      },
+      "alert_rating": {
+        "description": "触发宿主机告警的最低阈值",
+        "type": "object",
+        "items": {
+          "CPU_usage": {
+            "description": "触发告警的 CPU 最低占用（百分比）",
+            "type": "int",
+            "hint": "CPU 占用告警阈值视宿主机的具体情况而定，一般推荐 40 - 60",
+            "slider": {
+              "min": 0,
+              "max": 100,
+              "step": 1
+            },
+            "default": 50
+          },
+          "MEM_usage": {
+            "description": "触发告警的内存最低占用（百分比）",
+            "type": "int",
+            "hint": "内存占用告警阈值视宿主机的具体情况而定，一般推荐 60 - 80",
+            "slider": {
+              "min": 0,
+              "max": 100,
+              "step": 1
+            },
+            "default": 70
+          }
+        }
+      }
+    }
+  },
+  "time_setting": {
+    "description": "配置各类时间参数",
+    "type": "object",
+    "items": {
+      "alert_time": {
+        "description": "配置告警消息推送间隔（秒）",
+        "type": "int",
+        "hint": "消息推送间隔不宜过长或过短，请酌情考虑间隔时长，默认 600 秒",
+        "slider": {
+          "min": 60,
+          "max": 3600,
+          "step": 1
+        },
+        "default": 600
+      },
+      "query_time": {
+        "description": "配置历史状态查询区间（鸟）",
+        "type": "int",
+        "hint": "支持查询前 5 分钟至前 7 天的宿主机历史数据。查询区间过长可能拖慢 bot 响应时间，默认 3600 秒（即 1 小时）",
+        "slider": {
+          "min": 300,
+          "max": 604800,
+          "step": 1
+        },
+        "default": 3600
+      }
+    }
+  }
+}
