@@ -22,7 +22,7 @@ from pathlib import Path
     "ServerMonitor", 
     "Bricks0411", 
     "宿主机状态助手，帮每一位开发者获取详细的宿主机信息", 
-    "0.2.0"
+    "0.3.0"
 )
 class ServerMonitor(Star):
 
