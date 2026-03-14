@@ -5,8 +5,6 @@
 <p align="center">
 ✨making dev work easier✨
 </p>
-
-
 <p align="center">
   <img src="https://img.shields.io/badge/License-AGPL_3.0-blue.svg" alt="License: AGPL-3.0">
   <img src="https://img.shields.io/badge/Python-3.10+-yellow.svg" alt="Python 3.10+">
@@ -28,6 +26,13 @@
   ```
 
 🚨 在 `docker` 环境下获取的内核数据可能不准确，请酌情对待
+
+## 更新日志
+
+| 版本号 | 时间 | 内容 |
+| :----: | :----: | :----: |
+| $0.1.0$ | $2026$ 年 $3$ 月 $7$ 日 | 插件第 $1$ 版<br />支持宿主机的基本状态查询及历史状态查询<br />无配置文件，功能较为局限<br />已经发布为 `pre release` |
+| $0.3.0$ | $2026$ 年 $3$ 月 $14$ 日 | 插件第 $2$ 版<br />在第一版的基础上增加配置项，支持在 WebUI 上自定义插件各项配置<br />支持自动告警、告警间隔、告警阈值等参数的配置 |
 
 ## 项目架构
 
@@ -127,8 +132,9 @@ astrbot_plugin_server_monitor/
 
 目前支持：
 
-- 最近 **1 小时** 数据趋势
+- 最近 **一段时间**数据趋势
 - CPU / 内存 / 磁盘 / Load 折线图
+- 查询区间支持自定义
 
 用于快速观察服务器负载变化。
 
@@ -143,6 +149,23 @@ astrbot_plugin_server_monitor/
 示例如下：
 
 <img width="876" height="315" alt="image-20260305173724555" src="https://github.com/user-attachments/assets/5147bc3b-766e-497b-b069-d82e6114e7ab" />
+
+### 4. WebUI 配置项（Ver 0.3.0 更新）
+
+**介绍**
+
+插件支持在 Astrbot WebUI 上进行参数配置。
+
+目前支持：
+
+- 配置异常告警功能
+  - 告警推送会话
+  - 告警最低阈值
+    - CPU 占用
+    - 内存占用
+- 配置各类时间参数
+  - 告警消息推送间隔
+  - 历史状态查询区间
 
 ## 运行环境
 
