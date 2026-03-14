@@ -37,7 +37,7 @@ def draw_server_chart(rows, output_path: Path):
             load_values.append(load)
 
     # 降低采样点数，提高性能（点数过多时触发）
-    if len(timestamps) > 600:
+    if len(timestamps) > 200:
         timestamps = timestamps[::2]
         cpu_values = cpu_values[::2]
         mem_values = mem_values[::2]
