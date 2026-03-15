@@ -91,7 +91,7 @@ class ServerMonitor(Star):
         # 获取管理员列表
         admin_id = self.config["alert_setting"]["adminID"]
         result_message = (
-            f"系统状态异常！请及时检查宿主机状态！"
+            f"系统状态异常！请及时检查宿主机状态！\n"
             f"CPU: {metrics.cpu_usage:.1f}% (阈值 {self.CPU_limit}%)\n"
             f"MEM: {metrics.memory_usage:.1f}% (阈值 {self.MEM_limit}%)"
         )
@@ -111,6 +111,8 @@ class ServerMonitor(Star):
                 try:
                     # 获取当前宿主机状态
                     metrics = await self.service.immediate_collect()
+                    # 将采集到的数据存入数据库
+                    await self.database.insert(metrics)
                     # 宿主机状态判定
                     if (metrics.cpu_usage >= self.CPU_limit or metrics.memory_usage >= self.MEM_limit) and self.last_alert_time < time.time():
                         await self.send_alert_message(metrics)
