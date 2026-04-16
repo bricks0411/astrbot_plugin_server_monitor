@@ -112,7 +112,7 @@ class ServerMonitor(Star):
                     # 获取当前宿主机状态
                     metrics = await self.service.immediate_collect()
                     # 将采集到的数据存入数据库
-                    await self.database.insert(metrics)
+                    await self.database.insert(metrics, self.CPU_limit, self.MEM_limit)
                     # 宿主机状态判定
                     if (metrics.cpu_usage >= self.CPU_limit or metrics.memory_usage >= self.MEM_limit) and self.last_alert_time < time.time():
                         await self.send_alert_message(metrics)
